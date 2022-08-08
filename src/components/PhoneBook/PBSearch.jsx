@@ -1,10 +1,10 @@
 import { Label } from 'components/styled-comp/styled'
 import React from 'react'
 import PropTypes from 'prop-types' 
- const PBSearch = ({onChange}) => {
+ const PBSearch = ({array, onChange}) => {
   return (
     <>
-        <Label>Find contacts by name
+        {array && <Label>Find contacts by name
             <input
             type="text"
             name="name"
@@ -13,7 +13,7 @@ import PropTypes from 'prop-types'
             required
             onChange={onChange} 
             />
-        </Label>
+        </Label>}
     </>
   )
 }

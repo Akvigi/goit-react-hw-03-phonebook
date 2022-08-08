@@ -74,7 +74,7 @@ class App extends Component {
             <PhoneBookForm pushC={this.renderContacts} isExist = {this.isExist} />
           </Section>
           <Section title="Contacts">
-            <PBSearch onChange = {this.handleChangeFilter}/>
+            <PBSearch array={array} onChange = {this.handleChangeFilter}/>
             <List array={array} onDelete = {this.onDelete} />
           </Section>
         </ContentContainer>
