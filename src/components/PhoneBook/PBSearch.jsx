@@ -1,10 +1,11 @@
 import { Label } from 'components/styled-comp/styled'
 import React from 'react'
 import PropTypes from 'prop-types' 
- const PBSearch = ({array, onChange}) => {
+const PBSearch = ({ array, onChange }) => {
+   console.log(array)
   return (
     <>
-        {array && <Label>Find contacts by name
+        {array.length > 0 && array !== null && <Label>Find contacts by name
             <input
             type="text"
             name="name"
@@ -19,6 +20,7 @@ import PropTypes from 'prop-types'
 }
 
 PBSearch.propTypes = {
+  array: PropTypes.array,
   onChange: PropTypes.func  
 }
 
