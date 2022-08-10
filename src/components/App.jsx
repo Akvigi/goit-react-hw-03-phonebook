@@ -8,7 +8,7 @@ import { ContentContainer, PageContainer } from "./styled-comp/styled";
 
 class App extends Component {
   state = {
-    contacts: null,
+    contacts: [],
     filter:'',
   }
   
