@@ -39,7 +39,6 @@ class PBForm extends Component {
       number: number,
       id: nanoid()
     }
-    (isExist(newContact)) 
     if (isExist(newContact)) {
       this.reset()
       return alert("please enter new contact")

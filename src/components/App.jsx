@@ -32,8 +32,6 @@ class App extends Component {
     } else {
       this.setState({contacts: [newContact]})
     }
-    
-    setTimeout(() => (this.state.contacts), 500 )
   }
 
   handleChangeFilter = (e) => {
