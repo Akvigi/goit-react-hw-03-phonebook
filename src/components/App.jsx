@@ -33,7 +33,7 @@ class App extends Component {
       this.setState({contacts: [newContact]})
     }
     
-    setTimeout(() => console.log(this.state.contacts), 500 )
+    setTimeout(() => (this.state.contacts), 500 )
   }
 
   handleChangeFilter = (e) => {
@@ -49,14 +49,16 @@ class App extends Component {
   }
 
   isExist = (item) => {
-    const {contacts} = this.state
+    const { contacts } = this.state
+    let exist = false
     if (contacts) {
       contacts.forEach(cont => {
         if (cont.name === item.name) {
-          return alert("Please enter new contact")
+          return exist = true
         }
       })
     }
+    return exist
   }
 
   onDelete = (id) => {

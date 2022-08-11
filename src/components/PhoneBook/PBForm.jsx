@@ -6,7 +6,8 @@ import PropTypes from 'prop-types'
 class PBForm extends Component {
   state = {
     name: '',
-    number:''
+    number: '',
+    exist: false,
   }
   
   static propTypes = {
@@ -16,7 +17,7 @@ class PBForm extends Component {
 
   onChangeInp = (e) => {
       const {name, value} =  e.currentTarget
-      this.setState({ [name]: value })
+      this.setState({ [name]: value.trim() })
     }
 
   reset = () => {
@@ -25,16 +26,24 @@ class PBForm extends Component {
       number:''})
   }
 
+  existToggle = () => {
+    this.setState(prevState => ({exist: !prevState.exist}))
+  }
+
   onAddContact = (e, callback, isExist) => {
     e.preventDefault()
-    const { name, number } = this.state
+    const { name, number} = this.state
     if(name === '' && number === '') return alert("enter fields")
     const newContact = {
       name: name,
       number: number,
       id: nanoid()
     }
-    isExist(newContact)
+    (isExist(newContact)) 
+    if (isExist(newContact)) {
+      this.reset()
+      return alert("please enter new contact")
+    }
     callback(newContact)
     this.reset()
   }
